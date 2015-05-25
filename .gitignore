@@ -12,3 +12,6 @@
 hs_err_pid*
 /.project
 /.settings/
+rod-core/.classpath
+rod-core/.project
+rod-core/.settings/
