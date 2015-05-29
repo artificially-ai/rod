@@ -1,13 +1,11 @@
 package rod;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class DummyAnalyzer implements Analyzer {
 
-    private static Map<Class<? extends Observation>, CommandFactory> observationToCommand = new HashMap<>();
-    static {
-        observationToCommand.put(DummyObservation.class, new NopCommandFactory());
+    private ObservationToCommandMapping observationToCommand;
+
+    public void setObservationToCommand(ObservationToCommandMapping observationToCommand) {
+        this.observationToCommand = observationToCommand;
     }
 
     @Override
