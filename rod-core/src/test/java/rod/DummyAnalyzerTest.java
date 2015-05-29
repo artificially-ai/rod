@@ -23,4 +23,16 @@ public class DummyAnalyzerTest {
         assertThat(command, instanceOf(NopCommand.class));
     }
 
+    @Test(expected = UnrecognizableObservationException.class)
+    public void testAnalyzeUnexpecetdObservation() throws Exception {
+        Observation observation = new Observation() {
+            @Override
+            public Resource origin() {
+                return DummyResource.getSingleton();
+            }
+        };
+
+        dummyAnalyzer.analyze(observation);
+    }
+
 }
