@@ -4,12 +4,12 @@ public class DummyAnalyzer implements Analyzer {
 
     private ObservationToCommandMapping observationToCommand;
 
-    public void setObservationToCommand(ObservationToCommandMapping observationToCommand) {
+    public void setObservationToCommand(final ObservationToCommandMapping observationToCommand) {
         this.observationToCommand = observationToCommand;
     }
 
     @Override
-    public Command analyze(Observation observation) throws UnrecognizableObservationException {
+    public Command analyze(final Observation observation) throws UnrecognizableObservationException {
         if (observationToCommand.containsKey(observation.getClass())) {
             return observationToCommand.get(observation.getClass()).build();
         } else {
