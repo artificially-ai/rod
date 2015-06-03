@@ -10,7 +10,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"/analyzers.xml"})
+@ContextConfiguration(locations = { "/analyzers.xml" })
 public class DummyAnalyzerTest {
 
     @Autowired
@@ -18,14 +18,14 @@ public class DummyAnalyzerTest {
 
     @Test
     public void testAnalyzeDummyObervation() throws Exception {
-        Command command = dummyAnalyzer.analyze(new DummyObservation());
+        final Command command = dummyAnalyzer.analyze(new DummyObservation());
 
         assertThat(command, instanceOf(NopCommand.class));
     }
 
     @Test(expected = UnrecognizableObservationException.class)
     public void testAnalyzeUnexpecetdObservation() throws Exception {
-        Observation observation = new Observation() {
+        final Observation observation = new Observation() {
             @Override
             public Resource origin() {
                 return DummyResource.getSingleton();
