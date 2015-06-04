@@ -8,6 +8,7 @@
   <name>rod</name>
   <modules>
     <module>rod-core</module>
+    <module>rod-server</module>
   </modules>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
