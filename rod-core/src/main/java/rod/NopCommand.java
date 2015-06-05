@@ -12,4 +12,9 @@ public class NopCommand implements Command {
         logger.info("Executing NopCommand");
     }
 
+    @Override
+    public String toString() {
+        return "nop-command";
+    }
+
 }
