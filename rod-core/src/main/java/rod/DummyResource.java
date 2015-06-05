@@ -20,4 +20,9 @@ public class DummyResource implements Resource {
         return Observable.interval(1, TimeUnit.SECONDS).map(i -> new DummyObservation());
     }
 
+    @Override
+    public String getName() {
+        return "dummy";
+    }
+
 }
