@@ -32,12 +32,15 @@ public class DummyRodService implements RodService {
     @Override
     public void onError(final Throwable e) {
         logger.error("Caught error while observing: {}", e);
+        commands.onError(e);
     }
 
     @Override
     public void onNext(final Observation observation) {
         try {
-            commands.onNext(dummyAnalyzer.analyze(observation));
+            final Command command = dummyAnalyzer.analyze(observation);
+            logger.info("Dummy analysis produced command: {}", command);
+            commands.onNext(command);
         } catch (final UnrecognizableObservationException e) {
             logger.warn("Dummy analyzer cannot recognize commands of class {}: {}", observation.getClass(), e);
         }
