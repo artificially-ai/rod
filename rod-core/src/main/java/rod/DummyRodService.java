@@ -44,7 +44,7 @@ public class DummyRodService implements RodService {
     }
 
     @Override
-    public Observable<Command> observeCommands() {
+    public Observable<Command> commands() {
         return commands.asObservable();
     }
 
