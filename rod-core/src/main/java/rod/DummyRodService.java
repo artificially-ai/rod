@@ -1,7 +1,7 @@
 package rod;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import rx.subjects.PublishSubject;
 @Service
 public class DummyRodService implements RodService {
 
-    private static final Logger logger = LogManager.getLogger(DummyRodService.class);
+    private static final Logger logger = LoggerFactory.getLogger(DummyRodService.class);
 
     private final PublishSubject<Command> commands = PublishSubject.create();
 
