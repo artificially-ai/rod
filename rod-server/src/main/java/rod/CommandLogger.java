@@ -1,20 +1,25 @@
 package rod;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import rx.Subscriber;
 
 final class CommandLogger extends Subscriber<Command> {
+    private static final Logger logger = LoggerFactory.getLogger(CommandLogger.class);
+
     @Override
     public void onCompleted() {
-        ResourceController.logger.info("Command stream complete.");
+        logger.info("Command stream complete.");
     }
 
     @Override
     public void onError(final Throwable e) {
-        ResourceController.logger.error("Error processing stream: {}", e);
+        logger.error("Error processing stream: {}", e);
     }
 
     @Override
     public void onNext(final Command t) {
-        ResourceController.logger.info("Processed command: {}", t);
+        logger.info("Processed command: {}", t);
     }
 }
