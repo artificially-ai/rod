@@ -17,7 +17,7 @@ public class DummyResource implements Resource {
 
     @Override
     public Observable<Observation> observe() {
-        return Observable.interval(1, TimeUnit.SECONDS).map(i -> new DummyObservation());
+        return Observable.interval(250, TimeUnit.MILLISECONDS).map(i -> new DummyObservation());
     }
 
     @Override
