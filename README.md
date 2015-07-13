@@ -11,7 +11,9 @@ mvn install && mvn -pl rod-server spring-boot:run
 
 ### Register Dummy Resource
 
+```bash
 curl localhost:8080/resource/register
+```
 
 ### Observe commands generated from Dummy Observations
 
