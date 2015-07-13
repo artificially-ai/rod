@@ -1,15 +1,20 @@
 package rod;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class NopCommand implements Command {
 
-    private static final Logger logger = LogManager.getLogger(NopCommand.class);
+    private static final Logger logger = LoggerFactory.getLogger(NopCommand.class);
 
     @Override
     public void execute() {
         logger.info("Executing NopCommand");
+    }
+
+    @Override
+    public String toString() {
+        return "nop-command";
     }
 
 }

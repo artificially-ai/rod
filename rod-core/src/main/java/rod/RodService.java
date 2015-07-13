@@ -7,6 +7,6 @@ public interface RodService extends Observer<Observation> {
 
     public void register(Resource resource);
 
-    public Observable<Command> observeCommands();
+    public Observable<Command> commands();
 
 }

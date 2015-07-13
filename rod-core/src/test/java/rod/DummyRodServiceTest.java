@@ -23,7 +23,7 @@ public class DummyRodServiceTest {
     @Test
     public void testService() throws Exception {
         service.register(DummyResource.getSingleton());
-        final List<Command> commands = service.observeCommands().take(2).toList().toBlocking().single();
+        final List<Command> commands = service.commands().take(2).toList().toBlocking().single();
 
         assertThat(commands, contains(instanceOf(NopCommand.class), instanceOf(NopCommand.class)));
     }
