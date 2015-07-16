@@ -18,7 +18,7 @@ public class DummyAnalyzerTest {
 
     @Test
     public void testAnalyzeDummyObervation() throws Exception {
-        final Command command = dummyAnalyzer.analyze(new DummyObservation());
+        final Action command = dummyAnalyzer.analyze(new DummyObservation());
 
         assertThat(command, instanceOf(NopCommand.class));
     }

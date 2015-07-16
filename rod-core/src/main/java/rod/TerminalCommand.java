@@ -14,7 +14,7 @@ import rx.Observable;
 import rx.observables.StringObservable;
 import rx.subjects.PublishSubject;
 
-public abstract class TerminalCommand implements Command {
+public abstract class TerminalCommand implements Action {
 
     private static final Logger logger = LoggerFactory.getLogger(TerminalCommand.class);
 

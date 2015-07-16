@@ -41,7 +41,7 @@ public class CommandLoggerTest {
 
     @Test
     public void testOnError() throws Exception {
-        final Observable<Command> observable = Observable.error(new RuntimeException("Simulating an error."));
+        final Observable<Action> observable = Observable.error(new RuntimeException("Simulating an error."));
         observable.subscribeOn(Schedulers.immediate()).subscribe(new CommandLogger());
 
         final ILoggingEvent lastEvent = testAppender.getLastEvent();

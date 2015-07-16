@@ -2,6 +2,6 @@ package rod;
 
 public interface Analyzer {
 
-    public Command analyze(Observation observation) throws UnrecognizableObservationException;
+    public Action analyze(Observation observation) throws UnrecognizableObservationException;
 
 }
