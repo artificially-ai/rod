@@ -2,6 +2,10 @@
 
 [![Build Status](https://travis-ci.org/ekholabs/rod.svg)](https://travis-ci.org/ekholabs/rod)
 [![Coverage Status](https://coveralls.io/repos/ekholabs/rod/badge.svg?branch=master&service=github)](https://coveralls.io/github/ekholabs/rod?branch=master)
+<a href="https://scan.coverity.com/projects/5771">
+  <img alt="Coverity Scan Build Status"
+       src="https://scan.coverity.com/projects/5771/badge.svg"/>
+</a>
 
 ## Start REST API
 
