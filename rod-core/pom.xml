@@ -14,4 +14,11 @@
       <version>1.4.5.RELEASE</version>
     </dependency>
   </dependencies>
+  <build>
+    <testResources>
+      <testResource>
+        <directory>src/test/resources</directory>
+      </testResource>
+    </testResources>
+  </build>
 </project>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <include resource="org/springframework/boot/logging/logback/base.xml"/>
+  
+  <logger name="org.springframework" level="ERROR"/>
+  <logger name="org.hibernate" level="ERROR"/>
+  <logger name="ch.qos.logback" level="ERROR"/>
+
+  <appender name="TEST" class="rod.TestAppender">
+    <encoder>
+      <pattern>%m%n</pattern>
+    </encoder>
+  </appender>
+
+  <root level="debug">
+    <appender-ref ref="TEST"/>
+  </root>
+</configuration>
