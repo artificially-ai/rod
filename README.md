@@ -1,7 +1,7 @@
 # rod
 
 [![Build Status](https://travis-ci.org/ekholabs/rod.svg)](https://travis-ci.org/ekholabs/rod)
-
+[![Coverage Status](https://coveralls.io/repos/ekholabs/rod/badge.svg?branch=master&service=github)](https://coveralls.io/github/ekholabs/rod?branch=master)
 
 ## Start REST API
 
