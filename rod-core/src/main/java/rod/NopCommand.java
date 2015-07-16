@@ -3,7 +3,7 @@ package rod;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class NopCommand implements Command {
+public class NopCommand implements Action {
 
     private static final Logger logger = LoggerFactory.getLogger(NopCommand.class);
 

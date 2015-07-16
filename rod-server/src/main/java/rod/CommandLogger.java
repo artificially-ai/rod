@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 
 import rx.Subscriber;
 
-final class CommandLogger extends Subscriber<Command> {
+final class CommandLogger extends Subscriber<Action> {
     private static final Logger logger = LoggerFactory.getLogger(CommandLogger.class);
 
     @Override
@@ -19,7 +19,7 @@ final class CommandLogger extends Subscriber<Command> {
     }
 
     @Override
-    public void onNext(final Command t) {
+    public void onNext(final Action t) {
         logger.info("Processed command: {}", t);
     }
 }

@@ -9,7 +9,7 @@ public class DummyAnalyzer implements Analyzer {
     }
 
     @Override
-    public Command analyze(final Observation observation) throws UnrecognizableObservationException {
+    public Action analyze(final Observation observation) throws UnrecognizableObservationException {
         if (observationToCommand.containsKey(observation.getClass())) {
             return observationToCommand.get(observation.getClass()).build();
         } else {

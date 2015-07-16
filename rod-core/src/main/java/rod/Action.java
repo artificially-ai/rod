@@ -1,6 +1,6 @@
 package rod;
 
-public interface Command {
+public interface Action {
 
     public void execute();
 

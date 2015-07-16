@@ -14,7 +14,7 @@ public class DummyRodService implements RodService {
 
     private static final Logger logger = LoggerFactory.getLogger(DummyRodService.class);
 
-    private final PublishSubject<Command> commands = PublishSubject.create();
+    private final PublishSubject<Action> commands = PublishSubject.create();
 
     @Autowired
     private DummyAnalyzer dummyAnalyzer;
@@ -38,7 +38,7 @@ public class DummyRodService implements RodService {
     @Override
     public void onNext(final Observation observation) {
         try {
-            final Command command = dummyAnalyzer.analyze(observation);
+            final Action command = dummyAnalyzer.analyze(observation);
             logger.info("Dummy analysis produced command: {}", command);
             commands.onNext(command);
         } catch (final UnrecognizableObservationException e) {
@@ -47,7 +47,7 @@ public class DummyRodService implements RodService {
     }
 
     @Override
-    public Observable<Command> commands() {
+    public Observable<Action> commands() {
         return commands.asObservable();
     }
 

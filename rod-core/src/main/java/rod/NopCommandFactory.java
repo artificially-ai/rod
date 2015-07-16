@@ -1,9 +1,9 @@
 package rod;
 
-public class NopCommandFactory implements CommandFactory {
+public class NopCommandFactory implements ActionFactory {
 
     @Override
-    public Command build() {
+    public Action build() {
         return new NopCommand();
     }
 
