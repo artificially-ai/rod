@@ -1,11 +1,7 @@
 package rod;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class RodProperties {
-
-    private static final Logger logger = LoggerFactory.getLogger(RodProperties.class);
 
     public static final String ROD_COMMAND_RABBITMQSERVER = "rod.command.rabbitmqserver";
     public static final String ROD_COMMAND_RABBITMQSERVER_ARGUMENTS = "rod.command.rabbitmqserver.args";
