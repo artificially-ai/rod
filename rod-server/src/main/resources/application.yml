@@ -1,0 +1,22 @@
+info:
+  build:
+    artifact: ${project.artifactId}
+    name: ${project.name}
+    build.version: ${project.version}
+  app:
+    name: ROD
+    description: Robot On Duty
+    version: ${project.version}
+
+management:
+  health:
+    rabbit:
+      enabled: false
+
+endpoints:
+  health:
+    enabled: yes
+    sensitive: true
+
+logging:
+  file: rod.log
