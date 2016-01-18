@@ -14,11 +14,49 @@
       <version>1.4.5.RELEASE</version>
     </dependency>
   </dependencies>
+  <repositories>
+    <repository>
+      <id>rod-core</id>
+      <url>https://github.com/ekholabs/mvn-repo/raw/rod-core/</url>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>always</updatePolicy>
+      </snapshots>
+    </repository>
+  </repositories>
   <build>
     <testResources>
       <testResource>
         <directory>src/test/resources</directory>
       </testResource>
     </testResources>
+    <plugins>
+      <plugin>
+        <groupId>com.github.github</groupId>
+        <artifactId>site-maven-plugin</artifactId>
+        <version>0.12</version>
+        <configuration>
+          <message>Maven artifacts for es-code ${project.version}</message>
+          <noJekyll>true</noJekyll>
+          <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
+          <branch>refs/heads/es-code</branch>
+          <includes>
+            <include>**/*</include>
+          </includes>
+          <repositoryName>mvn-repo</repositoryName>
+          <repositoryOwner>ekholabs</repositoryOwner>
+          <userName>ekho-bot</userName>
+          <oauth2Token>${GITHUB_TOKEN}</oauth2Token>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>site</goal>
+            </goals>
+            <phase>deploy</phase>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
   </build>
 </project>
