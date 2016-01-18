@@ -75,6 +75,13 @@
       <version>1.6.1</version>
     </dependency>
   </dependencies>
+  <distributionManagement>
+    <repository>
+      <id>internal.repo</id>
+      <name>Temporary Staging Repository</name>
+      <url>file://${project.build.directory}/mvn-repo</url>
+    </repository>
+  </distributionManagement>
   <build>
     <pluginManagement>
       <plugins>
@@ -179,6 +186,32 @@
         <configuration>
           <repoToken>yourcoverallsprojectrepositorytoken</repoToken>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>com.github.github</groupId>
+        <artifactId>site-maven-plugin</artifactId>
+        <version>0.12</version>
+        <configuration>
+          <message>Maven artifacts for es-code ${project.version}</message>
+          <noJekyll>true</noJekyll>
+          <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
+          <branch>refs/heads/rod-server</branch>
+          <includes>
+            <include>**/*</include>
+          </includes>
+          <repositoryName>mvn-repo</repositoryName>
+          <repositoryOwner>ekholabs</repositoryOwner>
+          <userName>ekho-bot</userName>
+          <oauth2Token>${GITHUB_TOKEN}</oauth2Token>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>site</goal>
+            </goals>
+            <phase>deploy</phase>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>

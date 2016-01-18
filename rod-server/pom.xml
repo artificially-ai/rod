@@ -54,16 +54,13 @@
     </dependency>
   </dependencies>
 
-  <repositories>
+  <distributionManagement>
     <repository>
-      <id>rod-server</id>
-      <url>https://github.com/ekholabs/mvn-repo/raw/rod-server/</url>
-      <snapshots>
-        <enabled>true</enabled>
-        <updatePolicy>always</updatePolicy>
-      </snapshots>
+      <id>internal.repo</id>
+      <name>Temporary Staging Repository</name>
+      <url>file://${project.build.directory}/mvn-repo</url>
     </repository>
-  </repositories>
+  </distributionManagement>
 
   <build>
     <resources>
@@ -95,7 +92,7 @@
           <message>Maven artifacts for es-code ${project.version}</message>
           <noJekyll>true</noJekyll>
           <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
-          <branch>refs/heads/es-code</branch>
+          <branch>refs/heads/rod-server</branch>
           <includes>
             <include>**/*</include>
           </includes>
