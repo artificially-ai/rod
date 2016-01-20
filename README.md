@@ -7,6 +7,9 @@
        src="https://scan.coverity.com/projects/5771/badge.svg"/>
 </a>
 
+<p/>
+[![wercker status](https://app.wercker.com/status/1fc82ce885f244cff3f6c71088f69b46/m "wercker status")](https://app.wercker.com/project/bykey/1fc82ce885f244cff3f6c71088f69b46)
+
 ## Start REST API
 
 ```bash
