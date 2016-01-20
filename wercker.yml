@@ -15,4 +15,4 @@ build:
     - script:
         name: rod
         code: |
-          mvn -Drod.build.env=travis clean deploy
+          mvn -Drod.build.env=wercker clean deploy
