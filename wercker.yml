@@ -3,14 +3,16 @@
 # Read more about containers on our dev center
 # http://devcenter.wercker.com/docs/containers/index.html
 
-box: ekholabs/wercker-jdk8-rmq
+box: ekholabs/wercker-jdk8
 
 services:
     - rabbitmq
 
 build:
   steps:
+    - install-packages:
+        packages: rabbitmq-server
     - script:
         name: rod
         code: |
-          mvn -Drod.build.env=travis clean deploy
+          mvn -Drod.build.env=wercker clean deploy

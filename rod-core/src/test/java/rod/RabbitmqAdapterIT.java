@@ -5,6 +5,8 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 import static org.hamcrest.Matchers.equalTo;
 
 import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -24,13 +26,21 @@ public class RabbitmqAdapterIT {
     private static final AmqpTemplate template = context.getBean(AmqpTemplate.class);
 
     private final RabbitmqAdapter adapter = new RabbitmqAdapter();
+    
+    private static Map<String, String> executionMode = new HashMap<String, String>();
+    static {
+    	executionMode.put("travis", "rabbitmq.travis.properties");
+    	executionMode.put("wercker", "rabbitmq.wercker.properties");
+    	executionMode.put("local", "rabbitmq.local.properties");
+    }
 
     @BeforeClass
     public static void setupClass() throws Exception {
         final String propertyName = "rod.build.env";
         final String property = System.getProperty(propertyName);
         logger.debug("Value of {} is {}", propertyName, property);
-        final String propertiesFile = property != null && property.equals("travis") ? "rabbitmq.travis.properties" : "rabbitmq.local.properties";
+        
+        final String propertiesFile = property == null ? executionMode.get("local") : executionMode.get(property);
         final InputStream testProperties = Thread.currentThread().getContextClassLoader().getResourceAsStream(propertiesFile);
         System.getProperties().load(testProperties);
     }
