@@ -6,6 +6,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+import rod.dummy.rx.DummyAnalyzer;
+import rod.dummy.rx.DummyObservation;
+
 @Configuration
 @EnableAutoConfiguration
 @ComponentScan(basePackages = "rod")

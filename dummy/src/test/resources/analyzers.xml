@@ -7,12 +7,12 @@
                            http://www.springframework.org/schema/util
                            http://www.springframework.org/schema/util/spring-util.xsd">
 
-  <bean id="dummyAnalyzerBean" class="rod.DummyAnalyzer">
+  <bean id="dummyAnalyzerBean" class="rod.dummy.rx.DummyAnalyzer">
     <property name="observationToCommand" ref="observationToCommandBean"/>
   </bean>
 
   <util:map id="observationToCommandBean" map-class="rod.ObservationToCommandMapping">
-    <entry key="rod.DummyObservation" value-ref="nopCommandFactoryBean"/>
+    <entry key="rod.dummy.rx.DummyObservation" value-ref="nopCommandFactoryBean"/>
   </util:map>
 
   <bean id="nopCommandFactoryBean" class="rod.NopCommandFactory"/>

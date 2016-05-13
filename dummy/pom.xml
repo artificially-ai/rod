@@ -10,16 +10,24 @@
 
     <groupId>rod.dummy</groupId>
     <artifactId>dummy</artifactId>
-    <version>1.0-SNAPSHOT</version>
     <name>dummy</name>
 
+    <properties>
+    <core.version>1.0-SNAPSHOT</core.version>
+    <junit.version>4.12</junit.version>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>rod</groupId>
+            <artifactId>rod-core</artifactId>
+            <version>${core.version}</version>
+        </dependency>        
     </dependencies>
 
     <distributionManagement>
