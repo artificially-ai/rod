@@ -18,3 +18,9 @@ hs_err_pid*
 **/target/
 **/erl_crash.dump
 **/rod.log
+
+# IntelliJ files
+.idea/
+rod-core/rod-core.iml
+rod-server/rod-server.iml
+rod.iml
