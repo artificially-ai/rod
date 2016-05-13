@@ -1,7 +1,9 @@
-package rod;
+package rod.dummy.rx;
 
 import java.util.concurrent.TimeUnit;
 
+import rod.Observation;
+import rod.Resource;
 import rx.Observable;
 
 public class DummyResource implements Resource {

@@ -1,4 +1,10 @@
-package rod;
+package rod.dummy.rx;
+
+import rod.Action;
+import rod.Analyzer;
+import rod.Observation;
+import rod.ObservationToCommandMapping;
+import rod.UnrecognizableObservationException;
 
 public class DummyAnalyzer implements Analyzer {
 
