@@ -21,6 +21,6 @@ hs_err_pid*
 
 # IntelliJ files
 .idea/
-rod-core/rod-core.iml
-rod-server/rod-server.iml
-rod.iml
+disk-usage/disk-usage.iml
+dummy/dummy.iml
+*.iml

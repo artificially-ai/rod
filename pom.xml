@@ -9,6 +9,8 @@
 
     <modules>
         <module>rod-core</module>
+        <module>dummy</module>
+        <module>disk-usage</module>
         <module>rod-server</module>
     </modules>
 

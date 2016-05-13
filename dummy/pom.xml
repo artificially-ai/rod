@@ -3,8 +3,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>rod-core</groupId>
-        <artifactId>rod-core</artifactId>
+        <groupId>rod</groupId>
+        <artifactId>rod</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
